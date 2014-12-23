@@ -13,4 +13,4 @@ Gem - 5 points
 CONTROLS -
 
 Arrow keys - Up, right, down, left<br>
-Space - Enter
+Spacebar - Enter

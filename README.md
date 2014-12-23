@@ -7,8 +7,8 @@ surrounded by bugs that you have to avoid.
 Touch the star on the other side of the road that the bugs
 are crossing to discover more gems.
 
-Star - +1 point<br>
-Gems - +5 points
+Star - 1 point<br>
+Gems - 5 points
 
 CONTROLS -
 

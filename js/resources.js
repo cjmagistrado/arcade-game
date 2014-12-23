@@ -112,60 +112,70 @@
         isReady: isReady
     };
 	
-    /* Same process with sounds */
-    function sLoad(urlOrArr) {
+/* Same process with sounds */
+function sLoad(urlOrArr) {
 		
-        if(urlOrArr instanceof Array) {
-            urlOrArr.forEach(function(url) {
-                _sLoad(url);
-            });
-        } else {
-            _sLoad(urlOrArr);
-        }
+    if(urlOrArr instanceof Array) {
+		
+        urlOrArr.forEach(function(url) {
+        _sLoad(url);
+        });
+		
+    }else{
+		
+        _sLoad(urlOrArr);
     }
+};
 	
-    function _sLoad(url) {
+function _sLoad(url) {
 		
-        if (soundCache[url]) {
+    if (soundCache[url]) {
 			
-            return soundCache[url];
-			
-        }else{
-			
-            var audio = new Audio();
-            audio.onloadeddata = function() {
-				
-                soundCache[url] = audio;
-				
-                if(soundIsReady()) {
-					console.log("sounds ready");
-                	soundReadyCallbacks.forEach(function(func) { func(); });
-                }
-	   }
-    };
-		
-        soundCache[url] = false;
-      	audio.src = url;
-    }
-	
-    function sGet(url) {
         return soundCache[url];
-    }
-	
-    function soundIsReady() {
-        var ready = true;
-        for(var k in soundCache) {
-            if(soundCache.hasOwnProperty(k) &&
-               !soundCache[k]) {
-                ready = false;
+			
+    }else{
+			
+        var audio = new Audio();
+        audio.onloadeddata = function() {
+				
+            soundCache[url] = audio;
+				
+            if(soundIsReady()) {
+			
+                console.log("sounds ready");
+                soundReadyCallbacks.forEach(function(func) { func(); });
             }
         }
-        return ready;
+    }
+		
+    soundCache[url] = false;
+    audio.src = url;
+};
+	
+function sGet(url) {
+    return soundCache[url];
+}
+	
+function soundIsReady() {
+	
+    var ready = true;
+	
+    for(var k in soundCache) {
+		
+        if(soundCache.hasOwnProperty(k) &&
+		
+            !soundCache[k]) {
+            ready = false;
+        }
     }
 	
-    window.Sounds = {
-         load: sLoad,
-         get: sGet,
-    }
+    return ready;
+}
+	
+window.Sounds = {
+	
+    load: sLoad,
+    get: sGet,
+}
 	
 })();

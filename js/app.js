@@ -1,13 +1,13 @@
 
 /* There are three states of the game, start, select, and gameover.
- * The state variable let us know where we are and when to use certain function.
+ * The state variable lets us know where we are and when to use certain functions.
  */
 var state = "start";
 	
 /* The character index starts at the very beginning of the character array.
  * The properties of characters are name and image.
  */
-var characterIndex = 0,
+var characterIndex = 0, 
 	characters = [{ name : "Ren", image : "images/char-ren.png" },
 				  { name : "Selma", image : "images/char-selma.png" },
 				  { name : "Kyla", image : "images/char-kyla.png" },

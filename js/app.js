@@ -24,17 +24,17 @@ var playerLock = false;
  */
 var playSound = function(url) {
 	
-	function isPlaying(sound) {
-		return !sound.paused;
-	}
+    function isPlaying(sound) {
+        return !sound.paused;
+    }
 	
-	var sound = Sounds.get(url);
+    var sound = Sounds.get(url);
 	
-	if (isPlaying(sound)) {
-		sound.pause();
-		sound.currentTime = 0;
-	}
-	sound.play();
+    if (isPlaying(sound)) {
+        sound.pause();
+        sound.currentTime = 0;
+    }
+    sound.play();
 }
 
 /* This is the Player class. It has a sprite and has a frameIndex that stays at 0.
@@ -53,11 +53,11 @@ var Player = function(x, y) {
 	this.stepsPerBlink = 20;
 	this.numberOfFrames = 3;
 	this.selectMode = function() {
-		this.x = 202;
-		this.y = 235;
+	    this.x = 202;
+	    this.y = 235;
 	};
 	this.changePlayer = function(img) {
-		this.sprite = img;
+	    this.sprite = img;
 	};
 	this.life = 3;
 	this.blinkAble = true;
@@ -118,27 +118,27 @@ var Player = function(x, y) {
 		 * brings up the gameover screen. The final score is set to gameOverText and displays.
 		 */
 		if (lifeIndex === 0) {
-			state = "gameover";
-			this.hide();
-			score.hide();
-			uiGameOver.moveToPos(84, 195);
-			gameOverText.displayText(score.current.toString());
-			gameOverText.show(250, 320);
+		    state = "gameover";
+		    this.hide();
+		    score.hide();
+		    uiGameOver.moveToPos(84, 195);
+	            gameOverText.displayText(score.current.toString());
+		    gameOverText.show(250, 320);
 		}
 	};
 	this.hide = function() {
-		this.x = -100;
-		this.y = 0;
+	    this.x = -100;
+	    this.y = 0;
 	};
 	this.reset = function() {
-		this.x = 202;
-		this.y = 390;
+	    this.x = 202;
+	    this.y = 390;
 	};
 };
 
 Player.prototype.render = function() {
 		
-	ctx.drawImage(Resources.get(this.sprite), this.frameIndex * this.width / this.numberOfFrames, 0, this.width / this.numberOfFrames, this.height, this.x, this.y, this.width / this.numberOfFrames, this.height);
+    ctx.drawImage(Resources.get(this.sprite), this.frameIndex * this.width / this.numberOfFrames, 0, this.width / this.numberOfFrames, this.height, this.x, this.y, this.width / this.numberOfFrames, this.height);
 };
 
 /* Player updates */
@@ -155,11 +155,11 @@ Player.prototype.update = function(dt) {
 		if (rand > 70) {
 		
 			if (this.blinkAble === true) {
-				this.frameIndex = 1;
-				setTimeout(function() {
-					self.frameIndex = 0;
-				}, 150);
-				this.stepCount = 0;
+			    this.frameIndex = 1;
+			     setTimeout(function() {
+		                 self.frameIndex = 0;
+			     }, 150);
+			    this.stepCount = 0;
 			}
 		}
 	}
@@ -169,32 +169,32 @@ Player.prototype.update = function(dt) {
 	 */
 	if (this.x == star.x && this.y < star.y) {
 		
-		playSound('sounds/star.mp3');
-		score.add(1);
-		gemSpawner.generate();
-		player.reset();
+	    playSound('sounds/star.mp3');
+	    score.add(1);
+	    gemSpawner.generate();
+	    player.reset();
 	}
 }
 
 /* The UI of the game. */
 var ui = function(url, x, y) {
-	this.x = x;
-	this.y = y;
-	this.width = 344;
-	this.height = 392;
-	this.sprite = url;
-	this.frameIndex = 0;
-	this.stepCount = 0;
-	this.numberOfFrames = 1;
-	this.render = function() {
+    this.x = x;
+    this.y = y;
+    this.width = 344;
+    this.height = 392;
+    this.sprite = url;
+    this.frameIndex = 0;
+    this.stepCount = 0;
+    this.numberOfFrames = 1;
+    this.render = function() {
 		
-		ctx.drawImage(Resources.get(url), this.x, this.y);
-	}
-	this.changeDisplay = function(url, x, y) {	
-		this.sprite = url;
-		this.x = x;
-		this.y = y;
-	};
+        ctx.drawImage(Resources.get(url), this.x, this.y);
+    }
+    this.changeDisplay = function(url, x, y) {	
+       this.sprite = url;
+       this.x = x;
+       this.y = y;
+    };
 	this.moveToPos = function(x, y) {
 		this.x = x;
 		this.y = y;
@@ -533,7 +533,7 @@ var Enemy = function() {
 	this.speed = 150;
 	this.width = 101;
 	this.height = 88;
-    this.sprite = 'images/enemy-bug.png';
+	this.sprite = 'images/enemy-bug.png';
 	this.frameIndex = 0;
 	this.stepCount = 0;
 	this.stepsPerFrame = 1;

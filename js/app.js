@@ -7,12 +7,12 @@ var state = "start";
 /* The character index starts at the very beginning of the character array.
  * The properties of characters are name and image.
  */
-var characterIndex = 0, 
-	characters = [{ name : "Ren", image : "images/char-ren.png" },
-				  { name : "Selma", image : "images/char-selma.png" },
-				  { name : "Kyla", image : "images/char-kyla.png" },
-				  { name : "Elysia", image : "images/char-elysia.png" },
-				  { name : "Starla", image : "images/char-starla.png" }];
+var characterIndex = 0,
+    characters = [{ name : "Ren", image : "images/char-ren.png" },
+    { name : "Selma", image : "images/char-selma.png" },
+    { name : "Kyla", image : "images/char-kyla.png" },
+    { name : "Elysia", image : "images/char-elysia.png" },
+    { name : "Starla", image : "images/char-starla.png" }];
 
 /* A variable used for locking users keyboard input
  */				  
@@ -751,7 +751,6 @@ var GemGenerator = function() {
 		gemPosArray.length = 0;
 	}
 }
-
 /* Keyboard inputs */
 document.addEventListener('keydown', function(e) {
 	
@@ -762,10 +761,8 @@ document.addEventListener('keydown', function(e) {
         40: 'down',
 		32: 'space',
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
 /* Declare variables */
 var uiStart = new ui('images/ui/start.png', 84, 125),
 	uiSelect = new ui('images/ui/select-character.png', -400, 125),

@@ -94,13 +94,13 @@ var Engine = (function(global) {
           enemy.update(dt);
         });
         player.update(dt);
-		star.update(dt);
-		enemySpawner.update(dt);
-		gem1.update(dt);
-		gem2.update(dt);
-		gem3.update(dt);
-		characterSelectLeft.update(dt);
-		characterSelectRight.update(dt);
+	star.update(dt);
+	enemySpawner.update(dt);
+	gem1.update(dt);
+	gem2.update(dt);
+	gem3.update(dt);
+	characterSelectLeft.update(dt);
+	characterSelectRight.update(dt);
     }
 
     /* This function initially draws the "game level", it will then call
@@ -154,25 +154,25 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
-		gem1.render();
-		gem2.render();
-		gem3.render();
+	gem1.render();
+	gem2.render();
+	gem3.render();
         allEnemies.forEach(function(enemy) {
-        	enemy.render();
+        enemy.render();
         });
-		star.render();
-		uiStart.render();
-		uiSelect.render();
-		uiGameOver.render();
+	star.render();
+	uiStart.render();
+	uiSelect.render();
+	uiGameOver.render();
         player.render();
-		score.render();
-		characterSelectText.render();
-		characterSelectLeft.render();
-		characterSelectRight.render();
-		gameOverText.render();
-		heart1.render();
-		heart2.render();
-		heart3.render();
+	score.render();
+	characterSelectText.render();
+	characterSelectLeft.render();
+	characterSelectRight.render();
+	gameOverText.render();
+	heart1.render();
+	heart2.render();
+	heart3.render();
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -187,23 +187,23 @@ var Engine = (function(global) {
         'images/char-selma.png',
         'images/char-starla.png',
         'images/enemy-bug.png',
-		'images/gem.png',
+	'images/gem.png',
         'images/grass-block.png',
-		'images/heart.png',
-		'images/star.png',
+	'images/heart.png',
+	'images/star.png',
         'images/stone-block.png',
-		'images/ui/gameover.png',
-		'images/ui/select-left.png',
-		'images/ui/select-right.png',
-		'images/ui/select-character.png',
-		'images/ui/start.png',
+	'images/ui/gameover.png',
+	'images/ui/select-left.png',
+	'images/ui/select-right.png',
+	'images/ui/select-character.png',
+	'images/ui/start.png',
         'images/water-block.png'
     ]);
 	
 	Sounds.load([
-		'sounds/gem.mp3',
-		'sounds/ow.mp3',
-		'sounds/star.mp3'
+	  'sounds/gem.mp3',
+	  'sounds/ow.mp3',
+	  'sounds/star.mp3'
 	]);
 	
   	Resources.onReady(init);

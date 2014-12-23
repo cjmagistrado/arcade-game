@@ -7,10 +7,10 @@ surrounded by bugs that you have to avoid.
 Touch the star on the other side of the road that the bugs
 are crossing to discover more gems.
 
-Star - +1 point
+Star - +1 point<br>
 Gems - +5 points
 
 CONTROLS -
 
-Arrow keys - Up, right, down, left
+Arrow keys - Up, right, down, left<br>
 Space - Enter

@@ -232,7 +232,6 @@ var uiCharacterSelectText = function(text) {
 };
 
 uiCharacterSelectText.prototype.displayText = function(text) {
-	
     this.text = text;
 };
 
@@ -355,25 +354,30 @@ Player.prototype.handleInput = function(e) {
 		
             if (state === "select") {
 				
+				/* Select next character */
                 characterIndex++;
 				
                 if (characterIndex > characters.length - 1) {
                     characterIndex = characters.length - 1;
                 }
 				
+				/* If there are more upcoming characters, show left arrow  */
                 if (characterIndex > 0) {
                     characterSelectLeft.show(163, 320);
                 }
 				
+				/* If there aren't any more upcoming characters, hide right arrow */
                 if (characterIndex === characters.length - 1) {
                     characterSelectRight.hide(163, 320);
                 }
 				
+				/* Displays current name of specified character index */
                 characterSelectText.displayText(characters[characterIndex].name);
                 player.changePlayer(characters[characterIndex].image);
 				
             }else if (state === "playing" && playerLock === false) {
 				
+				/* Moves player right */
                 if (this.x !== 404) {
                     this.x += 101;
                 }
@@ -385,6 +389,7 @@ Player.prototype.handleInput = function(e) {
 		
             if (state === "playing" && playerLock === false) {
 				
+				/* Moves player left */
                 if (this.y !== 50) {
                     this.y -= 85;
                 }
@@ -396,25 +401,29 @@ Player.prototype.handleInput = function(e) {
 		
             if (state === "select") {
 				
+				/* Select previous character */
                 characterIndex--;
 				
                 if (characterIndex < 0) {
                     characterIndex = 0;
 					
                 }else{
-					
+					/* If there are more upcoming characters, show right arrow  */
                     characterSelectRight.show(295, 320);
                 }
 				
                 if (characterIndex === 0) {
+					/* If there aren't any more previous upcoming characters, hide left arrow */
                     characterSelectLeft.hide();
                 }
 				
+				/* Displays current name of specified character index */
                 characterSelectText.displayText(characters[characterIndex].name);
                 player.changePlayer(characters[characterIndex].image);
 				
             }else if (state === "playing" && playerLock === false) {
 				
+				/* Moves player left */
                 if (this.x !== 0) {
                     this.x -= 101;
                 }
@@ -426,6 +435,7 @@ Player.prototype.handleInput = function(e) {
 			
             if (state === "playing" && playerLock === false) {
 				
+				/* Moves player down */
                 if (this.y !== 390) {
                     this.y += 85;
                 }
@@ -437,6 +447,7 @@ Player.prototype.handleInput = function(e) {
 		
             if (state === "start") {
 				
+				/* Switch to select character screen */
                 uiStart.moveToPos(-400, 125);
                 uiSelect.moveToPos(84, 155);
                 player.selectMode();
@@ -446,6 +457,7 @@ Player.prototype.handleInput = function(e) {
 				
             }else if (state === "select") {
 				
+				/* Start the game screen */
                 player.reset();
                 characterSelectText.hide();
                 characterSelectLeft.hide();
@@ -461,6 +473,7 @@ Player.prototype.handleInput = function(e) {
 				
             }else if (state === "gameover") {
 				
+				/* Return to start screen */
                 uiStart.moveToPos(84, 125);
                 uiGameOver.moveToPos(-400, 125);
                 characterIndex = 0;

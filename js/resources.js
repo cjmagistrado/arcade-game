@@ -7,8 +7,8 @@
     var loading = [];
     var readyCallbacks = [];
 	
-	var soundCache = {};
-	var soundReadyCallbacks = [];
+    var soundCache = {};
+    var soundReadyCallbacks = [];
 
     /* This is the publicly accessible image loading function. It accepts
      * an array of strings pointing to image files or a string for a single
@@ -112,8 +112,8 @@
         isReady: isReady
     };
 	
-	/* Same process with sounds */
-	function sLoad(urlOrArr) {
+    /* Same process with sounds */
+    function sLoad(urlOrArr) {
 		
         if(urlOrArr instanceof Array) {
             urlOrArr.forEach(function(url) {
@@ -122,11 +122,11 @@
         } else {
             _sLoad(urlOrArr);
         }
-	}
+    }
 	
     function _sLoad(url) {
 		
-    	if (soundCache[url]) {
+        if (soundCache[url]) {
 			
             return soundCache[url];
 			
@@ -141,8 +141,8 @@
 					console.log("sounds ready");
                 	soundReadyCallbacks.forEach(function(func) { func(); });
                 }
-			}
-        };
+	   }
+    };
 		
         soundCache[url] = false;
       	audio.src = url;
@@ -163,9 +163,9 @@
         return ready;
     }
 	
-	window.Sounds = {
-		load: sLoad,
-		get: sGet,
-	}
+    window.Sounds = {
+         load: sLoad,
+         get: sGet,
+    }
 	
 })();

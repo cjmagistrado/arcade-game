@@ -209,7 +209,7 @@ var uiCharacterSelectText = function(text) {
 	this.height = 34;
 	this.text = text;
 	this.render = function() {
-		ctx.font = '18pt Calibri';
+	ctx.font = '18pt Calibri';
         ctx.textAlign = "center"; 
         ctx.strokeStyle = 'black';
         ctx.fillStyle = '#ffc200';
@@ -236,10 +236,10 @@ var uiGameOverText = function(text) {
 	this.height = 34;
 	this.render = function() {
 		
-		ctx.font = 'bold 25pt Calibri';
-		ctx.textAlign = "center"; 
-		ctx.strokeStyle = 'black';
-   		ctx.fillStyle = '#ffc200';
+	ctx.font = 'bold 25pt Calibri';
+	ctx.textAlign = "center"; 
+	ctx.strokeStyle = 'black';
+   	ctx.fillStyle = '#ffc200';
     	ctx.fillText(this.text, this.x, this.y);
 	}
 	this.hide = function() {
@@ -460,9 +460,9 @@ var Score = function(x, y) {
 	this.current = 0;
 	this.render = function() {
 		
-		ctx.font = '30pt Calibri';
-		ctx.textAlign="right"; 
-		ctx.strokeStyle = 'black';
+	ctx.font = '30pt Calibri';
+	ctx.textAlign="right"; 
+	ctx.strokeStyle = 'black';
     	ctx.fillStyle = 'white';
     	ctx.fillText(this.current, this.x, this.y);
 	}

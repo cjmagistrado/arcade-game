@@ -1,5 +1,5 @@
 
-/* There are three states of the game, start, select, and gameover.
+/* There are three states of the game - start, select, and gameover.
  * The state variable lets us know where we are and when to use certain functions.
  */
 var state = "start";

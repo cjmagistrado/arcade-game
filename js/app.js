@@ -686,14 +686,14 @@ var GemGenerator = function() {
 					  
 	this.generate = function() {
 		
-		/* Index of positions */
-		var gemPositions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-		/* When position is picked, it will be pushed to this array. */
+	    /* Index of positions */
+	    var gemPositions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+	    /* When position is picked, it will be pushed to this array. */
 	    var gemPosArray = [];
 		
-		/* Reset each gem and place them out of the screen */
-        gems.forEach(function(gem) {
-        	gem.set(-100, 325);
+	    /* Reset each gem and place them out of the screen */
+            gems.forEach(function(gem) {
+            gem.set(-100, 325);
         });
 		
 		function randomizePos() {
@@ -751,7 +751,7 @@ document.addEventListener('keydown', function(e) {
         38: 'up',
         39: 'right',
         40: 'down',
-		32: 'space',
+	32: 'space',
     };
     player.handleInput(allowedKeys[e.keyCode]);
 });

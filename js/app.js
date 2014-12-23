@@ -13,9 +13,9 @@ var characterIndex = 0,
     { name : "Kyla", image : "images/char-kyla.png" },
     { name : "Elysia", image : "images/char-elysia.png" },
     { name : "Starla", image : "images/char-starla.png" }];
-
+	
 /* A variable used for locking users keyboard input
- */				  
+ */	
 var playerLock = false;
 				  
 /* This plays the sound from the soundCache in resources.js
@@ -209,24 +209,20 @@ var uiCharacterSelectText = function(text) {
 	this.height = 34;
 	this.text = text;
 	this.render = function() {
-		
 		ctx.font = '18pt Calibri';
-		ctx.textAlign = "center"; 
-		ctx.strokeStyle = 'black';
-   		ctx.fillStyle = '#ffc200';
-    	ctx.fillText(this.text, this.x, this.y);
+        ctx.textAlign = "center"; 
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = '#ffc200';
+        ctx.fillText(this.text, this.x, this.y);
 	}
 }
-
 uiCharacterSelectText.prototype.displayText = function(text) {
 	this.text = text;
 };
-
 uiCharacterSelectText.prototype.show = function(x, y) {
 	this.x = x;
 	this.y = y;
 };
-
 uiCharacterSelectText.prototype.hide = function() {
 	this.x = -100;
 	this.y = 0;
@@ -251,7 +247,6 @@ var uiGameOverText = function(text) {
 		this.y = 0;
 	}
 }
-
 uiGameOverText.prototype = Object.create(uiCharacterSelectText.prototype);
 
 /* Holds the sprites of left and right arrows while on select player screen. */
@@ -343,7 +338,6 @@ Player.prototype.handleInput = function(e) {
 				if (characterIndex > 0) {
 					characterSelectLeft.show(163, 320);
 				}
-
 				if (characterIndex === characters.length - 1) {
 					characterSelectRight.hide(163, 320);
 				}
@@ -534,7 +528,6 @@ Star.prototype.update = function(dt) {
 
 /* This is the enemy class that contains a sprite */
 var Enemy = function() {
-
 	this.x = -100;
 	this.y = 300;
 	this.speed = 150;
@@ -599,7 +592,6 @@ var EnemyGenerator = function() {
 		this.stepCount += 10 * dt
 			
 		if (this.stepCount > this.stepsPerSet) {
-
 			var rand = Math.floor((Math.random() * 100) + 1);
 			
 			if (rand > 10){
@@ -612,7 +604,6 @@ var EnemyGenerator = function() {
 					enemies.splice(0, 1);
 				}
 			}
-
 			this.stepCount = 0;
 		}
 	}
@@ -678,20 +669,20 @@ var GemGenerator = function() {
 	
 	/* These are all the positions of the gems */
 	this.positions = [{ x : 37,  y : 242},
-				      { x : 138, y : 242},
-				      { x : 239, y : 242},
-					  { x : 340, y : 242},
-					  { x : 441, y : 242},
-					  { x : 37,  y : 325},
-					  { x : 138, y : 325},
-					  { x : 239, y : 325},
-					  { x : 340, y : 325},
-					  { x : 441, y : 325},
-					  { x : 37,  y : 408},
-					  { x : 138, y : 408},
-					  { x : 239, y : 408},
-					  { x : 340, y : 408},
-					  { x : 441, y : 408}];
+	{ x : 138, y : 242},
+	{ x : 239, y : 242},
+	{ x : 340, y : 242},
+	{ x : 441, y : 242},
+	{ x : 37,  y : 325},
+	{ x : 138, y : 325},
+	{ x : 239, y : 325},
+	{ x : 340, y : 325},
+	{ x : 441, y : 325},
+	{ x : 37,  y : 408},
+	{ x : 138, y : 408},
+	{ x : 239, y : 408},
+	{ x : 340, y : 408},
+	{ x : 441, y : 408}];
 					  
 	this.generate = function() {
 		
@@ -751,6 +742,7 @@ var GemGenerator = function() {
 		gemPosArray.length = 0;
 	}
 }
+
 /* Keyboard inputs */
 document.addEventListener('keydown', function(e) {
 	
@@ -763,6 +755,7 @@ document.addEventListener('keydown', function(e) {
     };
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
 /* Declare variables */
 var uiStart = new ui('images/ui/start.png', 84, 125),
 	uiSelect = new ui('images/ui/select-character.png', -400, 125),

@@ -1,0 +1,17 @@
+
+body {
+	background: #000;
+    text-align: center;
+}
+
+#main {
+	width: 100%;
+	height: 606px;
+	top: 50%;
+	margin-top: -303px;
+	position: fixed;
+}
+
+#stage {
+	border: thin solid #000;
+}

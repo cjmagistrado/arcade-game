@@ -15,4 +15,5 @@ CONTROLS -
 Arrow keys - Up, right, down, left<br>
 Spacebar - Enter
 
-https//cjmagistrado.github.io/front-end-nanodegree-arcade-game
+Here's the game -
+http://cjmagistrado.github.io/front-end-nanodegree-arcade-game/

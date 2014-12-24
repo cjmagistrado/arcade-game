@@ -5,7 +5,7 @@
 var state = "start";
 	
 /* The character index starts at the very beginning of the character array.
- * The properties of characters are name and image.
+ * Characters include their name and image.
  */
 var characterIndex = 0,
     characters = [{ name : "Ren",    image : "images/char-ren.png" },
@@ -75,7 +75,7 @@ var Player = function(x, y) {
         var self = this;
         this.frameIndex = 2;
 		
-	    /* When collided with an enemy, the player flashes from frameIndex 0
+	/* When collided with an enemy, the player flashes from frameIndex 0
          * to frameIndex 2, frameIndex 2 having a blank state of the player's sprite.
          */
         setTimeout(function() {

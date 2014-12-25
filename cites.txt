@@ -1,3 +1,6 @@
+
+Graphics - Udacity
+
 Frame animation with HTML5 canvas -
 http://www.williammalone.com/articles/create-html5-canvas-javascript-sprite-animation/
 

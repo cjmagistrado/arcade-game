@@ -1,4 +1,4 @@
-Frogger: Game Clone
+Frogger: Game Clone - Udacity
 ================================
 
 There are five characters to choose from as you lead them to find valuable gems
